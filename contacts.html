@@ -11,16 +11,22 @@
     <header class="site-header">
         <div class="container">
             <h1><a href="index.html">JASENEV STORE</a></h1>
+            
+            <button class="burger-btn" aria-label="Відкрити меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Головна</a></li>
-                    <li><a href="store.html">🛍️ Магазин</a></li>
-                    <li><a href="styles.html">👔 Стилі</a></li>
-                    <li><a href="about.html">ℹ️ Про нас</a></li>
+                    <li><a href="store.html">Магазин</a></li>
+                    <li><a href="styles.html">Стилі</a></li>
+                    <li><a href="about.html">Про нас</a></li>
                     <li><a href="contacts.html">Контакти</a></li>
-                    <li><a href="blog.html">📰 Блог</a></li>
-                    <li class="nav-cart"><a href="cart.html">🛒 Кошик</a></li>
-                    <li class="nav-login"><a href="login.html">👤 Увійти</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li class="nav-cart"><a href="cart.html">Кошик</a></li>
+                    <li class="nav-login"><a href="login.html">Увійти</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,7 +38,7 @@
             <p>Маєте запитання? Зв'яжіться з нами будь-яким зручним способом!</p>
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:support@jasenevstore.com.ua">support@jasenevstore.com.ua</a></li>
-                <li><strong>Телефон:</strong> <a href="https://t.me/jasenev_store">jasenev.store</a> (Telegram)</li>
+                <li><strong>Телефон:</strong> <a href="https://t.me/jasenev_store">jasenev.store  (Telegram)</a></li>
                 <li><strong>Відгуки:</strong> <a href="https://t.me/jasenevstore_rev">JASENEV.STORE ВІДГУКИ</a> </li>
                 <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@jusenuvstore?_t=ZM-8vu7YRdHbG9&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeqMdrHvBXcXPmo1vj9OzeadPUNt9YisqOMbbgr4guJa9z3ikDPkA4lI21LGA_aem_KwV0Cc_wxHjmXDqiP81WJA">jasenev.store (TikTok) </a> </li>
                 <li><strong>Instagram:</strong> <a href="https://www.instagram.com/jasenev_store/">jasenev_store (Instagram) </a> </li>
@@ -46,10 +52,14 @@
                 <div class="form-group">
                     <label for="name">Ваше ім'я:</label>
                     <input type="text" id="name" name="user_name" required>
+
+                    <span class="error-msg" id="name"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Ваш Email:</label>
                     <input type="email" id="email" name="user_email" required>
+
+                    <span class="error-msg" id="email-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="message">Ваше повідомлення:</label>
@@ -66,6 +76,6 @@
             <p>&copy; 2025 Jasenev Store. Всі права захищено.</p>
         </div>
     </footer>
-
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,117 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Хедер */
+.site-header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Навігація (Desktop) */
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #888;
+}
+
+/* Головний контент */
+main section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Футер */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Кнопка бургера (прихована на ПК) */
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.burger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Медіа-запит для планшетів і телефонів */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: row; 
+    }
+
+    .burger-btn {
+        display: flex; /* Показуємо бургер */
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 9;
+    }
+
+    .main-nav.open {
+        display: block; /* Клас для JS відкриття */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}

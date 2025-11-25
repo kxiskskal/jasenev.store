@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - Jasenev Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">JASENEV STORE</a></h1>
+            
+            <button class="burger-btn" aria-label="Відкрити меню">
+                <span></span><span></span><span></span>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="store.html">Магазин</a></li>
+                    <li><a href="styles.html">Стилі</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li class="nav-cart"><a href="cart.html">Кошик</a></li>
+                    <li class="nav-login"><a href="login.html">Увійти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="contact-form-section login-form">
+            <h2>Створення акаунту</h2>
+            <p>Заповніть форму, щоб зареєструватися.</p>
+            
+            <form action="#" class="contact-form">
+                <div class="form-group">
+                    <label for="reg-name">Ваше ім'я:</label>
+                    <input type="text" id="reg-name" name="name" required>
+
+                    <span class="error-msg" id="name"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-email">Email:</label>
+                    <input type="email" id="reg-email" name="email" required>
+
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-pass">Пароль:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="reg-pass" name="password" required>
+                        <button type="button" class="toggle-password" aria-label="Показати пароль">◉</button>
+
+                        <span class="error-msg" id="password-error"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-pass-confirm">Підтвердіть пароль:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="reg-pass-confirm" name="password_confirm" required>
+                        <button type="button" class="toggle-password" aria-label="Показати пароль">◉</button>
+
+                        <span class="error-msg" id="password-error"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Зареєструватися</button>
+            </form>
+
+            <div class="register-link">
+                <p>Вже є акаунт? <a href="login.html">Увійти тут</a></p>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Jasenev Store. Всі права захищено.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
