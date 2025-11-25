@@ -1,0 +1,303 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover { background-color: #555; }
+
+.hero img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Сітка товарів */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.product-link {
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+.product-link:hover h3 { color: #555; }
+
+/* Форми */
+.contact-form .form-group { margin-bottom: 15px; }
+.contact-form label { display: block; margin-bottom: 5px; font-weight: 500; }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none; border-color: #333; box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.contact-form input.invalid {
+    border-color: #dc3545; 
+    background-color: #fff8f8;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.error-msg.active {
+    opacity: 1;
+    height: auto;
+}
+
+.page-title { text-align: center; margin-bottom: 30px; }
+.page-title h2 { margin-bottom: 5px; }
+.page-title p { font-size: 1.1em; color: #555; margin: 0; }
+.blog-posts-container { display: grid; gap: 20px; }
+.blog-post { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.blog-post img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+.blog-post h3 { margin-top: 0; margin-bottom: 5px; }
+.blog-post .post-meta { font-size: 0.9em; color: #888; margin-bottom: 15px; }
+.blog-post p { line-height: 1.7; }
+.blog-post .btn { margin-top: 10px; }
+
+
+.style-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.style-card { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.style-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.style-card img { width: 100%; height: 400px; object-fit: cover; }
+.style-card-content { padding: 20px; }
+.style-card-content h3 { margin-top: 0; }
+.style-card-content p { color: #555; margin-bottom: 15px; }
+
+
+.nav-cart a, .nav-login a { background-color: #f5f5f5; padding: 5px 10px; border-radius: 5px; }
+.nav-cart a:hover, .nav-login a:hover { background-color: #eee; color: #333; }
+.cart-empty { text-align: center; padding: 40px; background-color: #f9f9f9; border-radius: 8px; }
+.cart-empty p { font-size: 1.2em; margin-bottom: 20px; }
+.login-form { max-width: 500px; margin: 0 auto; }
+.register-link { text-align: center; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+.register-link a { font-weight: bold; text-decoration: underline; }
+.register-link a:hover { color: #555; }
+
+
+.product-details-section { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.product-details-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+@media (max-width: 768px) { .product-details-layout { grid-template-columns: 1fr; } }
+.product-gallery .main-image img { width: 100%; border-radius: 8px; border: 1px solid #eee; }
+.thumbnail-images { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+.thumbnail-images img { width: 100%; border-radius: 5px; border: 1px solid #ccc; cursor: pointer; transition: opacity 0.3s ease; }
+.thumbnail-images img:hover { opacity: 0.7; }
+.product-info .product-price { font-size: 1.8em; font-weight: bold; color: #333; margin-top: 0; }
+.btn-buy { background-color: #585b57; font-size: 1.1em; padding: 12px 25px; }
+.btn-buy:hover { background-color: #218838; }
+
+
+.contact-info a { font-weight: 500; text-decoration: underline; text-decoration-color: #ccc; transition: all 0.3s ease; }
+.contact-info a:hover { color: #007bff; text-decoration-color: #007bff; }
+
+/* --- Перемикач видимості пароля --- */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0;
+    color: #666;
+    margin: 0; 
+    width: auto;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: #333;
+    background: none;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Хедер */
+.site-header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Навігація (Desktop) */
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #888;
+}
+
+/* Головний контент */
+main section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Футер */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Кнопка бургера (прихована на ПК) */
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.burger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Медіа-запит для планшетів і телефонів */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: row; 
+    }
+
+    .burger-btn {
+        display: flex; /* Показуємо бургер */
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 9;
+    }
+
+    .main-nav.open {
+        display: block; /* Клас для JS відкриття */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+@import 'base.css';
+@import 'layout.css';
+@import 'components.css';
