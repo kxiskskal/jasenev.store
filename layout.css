@@ -31,6 +31,7 @@
     padding: 0;
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -84,34 +85,253 @@ main section {
 
 /* Медіа-запит для планшетів і телефонів */
 @media (max-width: 768px) {
+    
+    /* 1. ХЕДЕР: Розміщуємо лого і бургер в ряд */
     .site-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         flex-direction: row; 
     }
 
+    /* 2. БУРГЕР-КНОПКА */
     .burger-btn {
-        display: flex; /* Показуємо бургер */
+        display: flex; /* Показуємо кнопку тільки на мобільному */
+        z-index: 101;  /* Щоб вона була поверх меню */
     }
 
+    /* 3. ВИПАДАЮЧЕ МЕНЮ (КОНТЕЙНЕР) */
     .main-nav {
-        display: none;
+        display: none; /* За замовчуванням приховано */
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #fff;
+        
+        /* Світла тема (стандарт) */
+        background-color: #ffffff; 
         border-bottom: 1px solid #ddd;
-        padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 9;
+        
+        padding: 30px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 100;
     }
 
+    /* Клас для відкриття через JS */
     .main-nav.open {
-        display: block; /* Клас для JS відкриття */
+        display: block;
+        animation: slideDown 0.3s ease-out; /* Плавна поява */
     }
 
     .main-nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 20px; /* Більше повітря між пунктами */
+        padding: 0;
+    }
+
+    /* 4. ТЕМНА ТЕМА: ВИПРАВЛЕННЯ ФОНУ */
+    body.dark-theme .main-nav {
+        background-color: #121212; /* Робимо меню чорним! */
+        border-bottom: 1px solid #333;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Посилання в темній темі */
+    body.dark-theme .main-nav a {
+        color: #ffffff !important; /* Білий текст */
+        font-size: 18px; /* Трохи крупніше для зручності */
+        background-color: transparent; /* Прибираємо фон у самих слів */
+    }
+
+    /* При наведенні (або натисканні пальцем) */
+    body.dark-theme .main-nav a:hover {
+        color: #ccff00 !important; /* Неоновий акцент */
+        background-color: transparent;
+    }
+
+    /* 5. КНОПКИ (КОШИК / УВІЙТИ) В МЕНЮ */
+    body.dark-theme .nav-cart a,
+    body.dark-theme .nav-login a {
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        padding: 10px 25px;
+        border-radius: 4px;
+        background-color: transparent !important;
+    }
+    
+    /* Акцент на кнопках при натисканні */
+    body.dark-theme .nav-cart a:hover,
+    body.dark-theme .nav-login a:hover {
+        border-color: #ccff00 !important;
+        color: #ccff00 !important;
     }
 }
+
+/* Анімація випадання (для краси) */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Стиль кнопки теми в хедері */
+.theme-btn-header {
+    background: none;       /* Без фону */
+    border: none;           /* Без рамки */
+    font-size: 1.2rem;      /* Розмір іконки */
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+
+.theme-btn-header:hover {
+    transform: scale(1.1);  /* Легке збільшення при наведенні */
+}
+
+/* Колір іконки у світлій темі */
+.theme-btn-header {
+    color: #333; 
+}
+
+/* Колір іконки у темній темі */
+body.dark-theme .theme-btn-header {
+    color: #fff; /* Білий місяць/сонце на темному фоні */
+}
+
+/* Основные настройки тела страницы */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* --- ХЕДЕР --- */
+body.dark-theme .site-header {
+    background-color: #121212;
+    padding: 20px 0;
+    border-bottom: 1px solid #333; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Тень сделал темнее, иначе на черном ее не видно */
+    position: relative;
+}
+
+/* --- ФУТЕР --- */
+body.dark-theme .site-footer {
+    background-color: #121212;
+    color: #e0e0e0;
+    border-top: 1px solid #333; /* border-color сам по себе не работает без style/width */
+}
+
+/* Ссылки в футере */
+body.dark-theme .site-footer a {
+    color: #90caf9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .site-footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Иконки в футере */
+body.dark-theme .site-footer svg,
+body.dark-theme .site-footer i {
+    fill: #e0e0e0;
+    color: #e0e0e0;
+}
+
+/* --- КАРТОЧКИ ТОВАРОВ --- */
+body.dark-theme .product-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent !important;
+    box-shadow: none ;
+    border-radius: 0 !important;
+}
+
+body.dark-theme main,
+body.dark-theme .container,
+body.dark-theme section {
+    background-color: transparent; 
+    color: #ffffff;
+}
+
+/* Если нужно выделить Hero-секцию, красим только её */
+body.dark-theme .hero {
+    /* Можно оставить прозрачным или сделать чуть светлее для акцента */
+    background-color: transparent; 
+}
+
+/* Глобальные ссылки (с осторожностью) */
+body.dark-theme a {
+    color: #ffffff;
+}
+
+/* --- ВИПРАВЛЕННЯ КОШИКА ДЛЯ ТЕМНОЇ ТЕМИ --- */
+body.dark-theme .cart-empty {
+    background-color: #1e1e1e;  /* Темно-сірий фон замість білого */
+    color: #ffffff;             /* Білий текст */
+    border: 1px solid #333;     /* Темна рамка */
+}
+
+/* Якщо текст "Ваш кошик порожній" був чорним, робимо його білим */
+body.dark-theme .cart-empty p {
+    color: #ffffff;
+}
+
+/* Виправляємо кнопки в хедері (щоб не були білими плямами) */
+body.dark-theme .nav-cart a,
+body.dark-theme .nav-login a {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+
+/* --- DARK THEME PRICING (Balenciaga Aesthetic) --- */
+
+/* 1. Контейнер цен */
+body.dark-theme .price-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 2. Старая цена (высветлили для черного фона) */
+body.dark-theme .old-price {
+    color: #808080; /* Светло-серый, чтобы читалось на черном */
+    text-decoration: line-through;
+    /* Стильная деталь: линия зачеркивания красная, а текст серый */
+    text-decoration-color: #ff3333; 
+    text-decoration-thickness: 2px; /* Жирная линия */
+    font-size: 0.9em;
+}
+
+/* 3. Новая цена (Ярко-красная "Safety Red") */
+body.dark-theme .new-price {
+    color: #ff3333; /* Яркий красный, хорошо видно на черном */
+    font-weight: 700;
+    font-size: 1.3em;
+    letter-spacing: -0.5px;
+}
+
+/* 4. Бейдж "-20%" (Эффект белой наклейки) */
+body.dark-theme .sale-badge {
+    background-color: #1e1e1e; /* Белый квадрат */
+    color: #ffffff;            /* Черный текст */
+    border: 1px solid #ffffff; /* Четкие границы */
+    
+    /* Если хотите инверсию (Черный бейдж с белым текстом), 
+       раскомментируйте строки ниже и закомментируйте верхние: */
+    /*  */
+    /*  */
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 12px;
+    font-weight: 900;
+    font-size: 14px;
+    border-radius: 0; /* Строгие углы (Брутализм) */
+    z-index: 10;
+}
+

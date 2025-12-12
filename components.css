@@ -86,6 +86,12 @@
     height: auto;
 }
 
+.form-messages { margin-top: 1rem; }
+.message { padding: 1rem; border-radius: 8px; }
+.message-success { background: #d4edff; color: #155724; border: 1px solid #c3e6cb; }
+.input-error { border-color: #dc3545 !important; }
+.error-message-text { display: block; margin-top: 0.25rem; }
+
 .page-title { text-align: center; margin-bottom: 30px; }
 .page-title h2 { margin-bottom: 5px; }
 .page-title p { font-size: 1.1em; color: #555; margin: 0; }
@@ -163,4 +169,253 @@
 .toggle-password:hover {
     color: #333;
     background: none;
+}
+
+/* --- ЗАВДАННЯ 3.2: АКТИВНЕ МЕНЮ (JS) --- */
+.nav-hover-active {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    color: #000 !important;
+    transition: 0.3s;
+}
+body.dark-theme .nav-hover-active {
+    background-color: #333;
+    color: #fff !important;
+}
+
+/* --- ЗАВДАННЯ 2.2: АКОРДЕОН --- */
+.accordion-content {
+    display: none; /* Сховано за замовчуванням */
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 3px solid #333;
+    margin-top: 10px;
+}
+.accordion-content.show {
+    display: block; /* Показуємо класом */
+}
+body.dark-theme .accordion-content {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+/* --- ЗАВДАННЯ 4: ВАЛІДАЦІЯ --- */
+.input-error {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff8f8;
+}
+.error-message-text {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+.success-message {
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none; /* Сховано */
+}
+
+.footer-date {
+    margin-top: 10px;
+    font-size: 0.9em; /* Можно сделать дату чуть меньше основного текста */
+}
+
+/* Контейнер для цін, щоб вони стояли поруч або одна під одною */
+/* --- BALENCIAGA STYLE PRICING --- */
+
+.price-container {
+    display: flex;
+    align-items: baseline; /* Вирівнюємо по нижньому краю шрифту */
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Максимально простий шрифт */
+}
+
+/* Стара ціна: Тонка, сіра, ледь помітна */
+.old-price {
+    text-decoration: line-through;
+    color: #555555; /* Темно-сірий */
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+/* Нова ціна: Червона, жирна, "плоска" (без світіння) */
+.new-price {
+    color: #ff2222; /* Чистий червоний (Safety Red) */
+    font-weight: 700;
+    font-size: 1.25em;
+    letter-spacing: -0.5px; /* Трохи стиснуті літери для стилю */
+}
+
+/* Бейдж знижки: Виглядає як цінник у магазині */
+.sale-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    /* Суворий контраст: Білий фон на чорному товарі */
+    background-color: #ffffff; 
+    color: #000000;
+    
+    padding: 6px 10px;
+    font-weight: 900; /* Дуже жирний */
+    font-family: sans-serif;
+    font-size: 14px;
+    
+    /* БРУТАЛІЗМ: Гострі кути, ніяких нахилів */
+    border-radius: 0; 
+    transform: none; 
+    z-index: 10;
+}
+
+/* --- ВОССТАНОВЛЕНИЕ СТИЛЕЙ ДЛЯ LOGIN / REGISTER --- */
+
+/* 1. Возвращаем отступы для секции */
+.contact-form-section {
+    padding: 60px 20px;
+    max-width: 600px; /* Ограничиваем ширину, чтобы не растягивалось */
+    margin: 0 auto;   /* Центрируем */
+    text-align: center;
+}
+
+/* 2. Стилизуем сами формы (Login и Register) так же, как была Contact Form */
+.login-form, 
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступы между полями */
+    text-align: left; /* Текст внутри формы слева */
+    margin-top: 30px;
+}
+
+/* 3. Стили полей ввода (input) */
+.login-form input,
+.register-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Чтобы padding не ломал ширину */
+    transition: all 0.3s ease;
+}
+
+/* 4. Стили кнопок внутри форм */
+.login-form .btn,
+.register-form .btn {
+    width: 100%; /* Кнопка на всю ширину */
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form .btn:hover,
+.register-form .btn:hover {
+    background-color: #555;
+}
+
+/* 5. Адаптация для ТЕМНОЙ ТЕМЫ */
+body.dark-theme .login-form input,
+body.dark-theme .register-form input {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+body.dark-theme .login-form input:focus,
+body.dark-theme .register-form input:focus {
+    border-color: #ccff00;
+    outline: none;
+}
+
+body.dark-theme .contact-form-section h2,
+body.dark-theme .contact-form-section p {
+    color: #fff;
+}
+
+
+/* --- SUCCESS SCREEN STYLES (Registration) --- */
+
+.success-animation {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-animation h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.success-animation p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.redirect-msg {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 15px;
+    font-family: monospace;
+}
+
+/* Темна тема */
+body.dark-theme .success-animation h3 { color: #fff; }
+body.dark-theme .success-animation p { color: #aaa; }
+
+/* --- АНІМОВАНА ГАЛОЧКА (CHECKMARK) --- */
+.checkmark-circle {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    border: 2px solid #ccff00; /* Неоновий контур */
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+}
+
+.checkmark.draw:after {
+    animation-duration: 800ms;
+    animation-timing-function: ease;
+    animation-name: checkmark;
+    transform: scaleX(-1) rotate(135deg);
+}
+
+.checkmark:after {
+    opacity: 1;
+    height: 30px;
+    width: 15px;
+    transform-origin: left top;
+    border-right: 3px solid #ccff00; /* Неонова галочка */
+    border-top: 3px solid #ccff00;
+    content: '';
+    left: 14px;
+    top: 30px;
+    position: absolute;
+}
+
+@keyframes checkmark {
+    0% { height: 0; width: 0; opacity: 1; }
+    20% { height: 0; width: 15px; opacity: 1; }
+    40% { height: 30px; width: 15px; opacity: 1; }
+    100% { height: 30px; width: 15px; opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

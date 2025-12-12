@@ -27,18 +27,19 @@
                     <li><a href="blog.html">Блог</a></li>
                     <li class="nav-cart"><a href="cart.html">Кошик</a></li>
                     <li class="nav-login"><a href="login.html">Увійти</a></li>
+                    <li><button id="theme-toggle" class="theme-btn-header" title="Змінити тему">☾</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero">
-            <h2>Нова колекція вже тут</h2>
-            <p>Відкрийте для себе останні тренди від провідних брендів.</p>
-            <a href="#" class="btn">Переглянути</a>
-            <img src="https://placehold.co/1200x400/EFEFEF/333333?text=Нова+Колекція" alt="Банер нової колекції">
-        </section>
+            <section class="hero">
+                <h2>Нова колекція вже тут</h2>
+                <p>Відкрийте для себе останні тренди від провідних брендів.</p>
+                <a href="store.html" class="btn">Переглянути</a>
+                <img src="https://placehold.co/1200x400/EFEFEF/333333?text=Нова+Колекція" alt="Банер нової колекції">
+            </section>
 
         <section class="featured-products">
     <h2>Бестселери</h2>
@@ -71,9 +72,20 @@
             <a href="product-runners.html" class="btn">Детальніше</a>
         </div>
         
+        
     </div>
 </section>
-
+        <div class="container" style="margin-bottom: 40px;">
+            <h3>Доставка та оплата</h3>
+            <button id="accordion-btn" class="btn" style="background: #555;">Показати більше</button>
+            <div id="accordion-text" class="accordion-content">
+                <p> Доставка: коли товар є у наявності, відправка товару йде у той самий день(1-2 дні).
+                    Оплата прозводится чи при отримані чи по предоплаті, в задежності як ви хочете зробити замовлення.
+                    Наприклад: є деякі товари котрі потрібно очікувати на протязі 10-14 робочих днів.
+                    Якщо вас виникають якісь сумніви що до оплати або якості товару, то вам не потрібно хвилюватись, оскільки ми робимо все для наших клієнтів.
+                </p>
+            </div>
+        </div>
 <section class="categories">
     <h2>Категорії товарів</h2>
     <ul>
@@ -87,9 +99,9 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Jasenev Store. Всі права захищено.</p>
+            <div id="date-container"></div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
