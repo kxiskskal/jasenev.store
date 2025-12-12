@@ -14,10 +14,13 @@ Jasenev Store
 
 ├── /css/                     # Стилі сайту
 
-│   └── base.css
-    └── components.css
-│   └── layout.css
-    └── style.css
+│   ├── base.css
+    
+│    └── components.css   
+
+│    └── layout.css
+    
+│    └── style.css
 │
 
 │
@@ -97,6 +100,7 @@ Jasenev Store
 ### Додатково
  **Живий футер:** Відображення поточної дати та часу в реальному часі.
  **Модульна структура:** JavaScript код розділений на логічні модулі (`forms.js`, `ui.js`, `theme.js` тощо).
+
 
 
 
